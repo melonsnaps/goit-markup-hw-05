@@ -118,6 +118,19 @@ nav .link {
     color: #2e2f42;
 }
 
+.active::after {
+    content: " ";
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #404BBF;
+    position: relative;
+    top: 20px;
+}
+
+/* END OF HEADER */
+
 .section {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -161,6 +174,28 @@ button:hover {
 
 button:focus {
     background-color: #ff6b6b;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-modal {
+    background: white;
+    width: 408px;
+    height: 584px;
+}
+
+.is-hidden {
+    visibility: hidden;
 }
 
 /* CSS FOR SERVICES */
@@ -359,6 +394,37 @@ footer .logo {
 .project img {
     width: 100%;
     display: block;
+}
+
+.project:hover .project-image-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project {
+    overflow: hidden;
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-caption {
+    position: absolute;
+    background-color: rgba(77, 90, 229, 1);
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-image-caption p {
+    padding: 40px 32px;
 }
 
 @media (min-width: 428px) {
